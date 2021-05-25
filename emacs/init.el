@@ -57,6 +57,7 @@
 (global-set-key (kbd "M-c") 'comment-region)
 (global-set-key (kbd "C-M-<down>") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-M-<up>") 'mc/mark-previous-like-this)
+(global-set-key (kbd "M-s") 'mark-sexp)
 
 (use-package dired-x
   :ensure nil)
