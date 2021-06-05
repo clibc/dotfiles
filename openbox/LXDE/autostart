@@ -1,0 +1,9 @@
+@lxpanel --profile LXDE
+@pcmanfm --desktop --profile LXDE
+@xscreensaver -no-splash
+@xset r rate 200 30
+@setxkbmap -layout us,az -option grp:alt_shift_toggle
+@xset b off
+@xrdb /home/clibc/.Xresources
+@compton
+@/usr/lib/notification-daemon/notification-daemon start &

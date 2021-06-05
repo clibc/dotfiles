@@ -1,0 +1,6 @@
+configuration {
+ modi: "window,drun,ssh,combi";
+ theme: "Arc-Dark";
+ font: "Consolas 13";
+ combi-modi: "window,drun,ssh";
+ }
