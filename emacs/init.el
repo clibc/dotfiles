@@ -24,9 +24,9 @@
 (setq make-backup-files nil)
 (setq ac-auto-show-menu nil)
 
+(setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq c-basic-offset 4)
-
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
