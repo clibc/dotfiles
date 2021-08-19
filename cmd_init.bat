@@ -16,7 +16,7 @@ doskey cp=copy $*
 doskey mv=move $*
 doskey rm=del $*
 doskey alias=doskey /MACROS:ALL
-doskey emacs=start /B runemacs.exe
+doskey emacs=start /B runemacs.exe $*
 doskey nmake=nmake /F NMakefile $*
 REM doskey nano="C:\Program Files\Git\usr\bin\nano.exe" $*
 cls
