@@ -11,6 +11,7 @@
 (show-paren-mode 1)
 
 (global-display-line-numbers-mode)
+(global-auto-revert-mode 1)
 
 (setq-default cursor-type 'box) 
 
