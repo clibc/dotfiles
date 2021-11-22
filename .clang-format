@@ -1,3 +1,4 @@
+SortIncludes: false
 BasedOnStyle: Chromium
 AlignConsecutiveAssignments: true
 IndentWidth: 4
