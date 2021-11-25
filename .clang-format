@@ -3,3 +3,6 @@ BasedOnStyle: Chromium
 AlignConsecutiveAssignments: true
 IndentWidth: 4
 SpacesInParentheses: true
+BinPackArguments: false
+BinPackParameters: false
+ContinuationIndentWidth: false
