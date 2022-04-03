@@ -7,4 +7,4 @@ if [ -z "$quality" ] # if escape pressed
 then
     exit
 fi
-mpv --force-window --ytdl-format=$quality $url
+mpv --loop --force-window --ytdl-format=$quality $url
