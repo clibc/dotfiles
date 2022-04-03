@@ -1,0 +1,10 @@
+#!/bin/bash
+
+url=`xclip -selection c -o`
+quality=`echo "youtube-dl --list-formats $url" | sh | tail -n +4 | dmenu -l 25 | awk '{print $1}'`
+
+if [ -z "$quality" ] # if escape pressed
+then
+    exit
+fi
+mpv --force-window --ytdl-format=$quality $url
