@@ -3,7 +3,7 @@
 (ido-mode 1)
 (setq ring-bell-function 'ignore)
 (toggle-scroll-bar -1)
-(setq default-frame-alist '((font . "JetBrains Mono Regular 14")))
+(setq default-frame-alist '((font . "JetBrains Mono 12")))
 (global-hl-line-mode +1)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (global-hi-lock-mode 1)
@@ -12,6 +12,7 @@
 
 (global-display-line-numbers-mode)
 (global-auto-revert-mode 1)
+(transient-mark-mode 1)
 
 (setq-default cursor-type 'box) 
 
@@ -33,7 +34,6 @@
 (setq c-default-style "bsd")
 (setq-default tab-width 4)
 (setq c-basic-offset 4)
-
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -66,6 +66,7 @@
 (global-set-key (kbd "C-M-<up>") 'mc/mark-previous-like-this)
 (global-set-key (kbd "M-s") 'mark-sexp)
 (global-set-key (kbd "M-RET") 'open-line)
+(global-set-key (kbd "C-q") 'exchange-point-and-mark)
 
 (use-package dired-x
   :ensure nil)
