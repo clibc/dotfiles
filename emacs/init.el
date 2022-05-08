@@ -12,7 +12,7 @@
 
 (global-display-line-numbers-mode)
 (global-auto-revert-mode 1)
-(transient-mark-mode 1)
+(transient-mark-mode 0)
 
 (setq-default cursor-type 'box) 
 
