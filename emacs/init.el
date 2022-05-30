@@ -69,7 +69,7 @@
 (global-set-key (kbd "C-q") 'exchange-point-and-mark)
 (global-set-key (kbd "M-n") 'next-error)
 (global-set-key (kbd "C-n") 'previous-error)
-(define-key c-mode-map (kbd "C-d") 'delete-region)
+;;(define-key c-mode-map (kbd "C-d") 'delete-region)
 
 (use-package dired-x
   :ensure nil)
