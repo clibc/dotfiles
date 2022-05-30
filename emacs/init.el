@@ -67,6 +67,7 @@
 (global-set-key (kbd "M-s") 'mark-sexp)
 (global-set-key (kbd "M-RET") 'open-line)
 (global-set-key (kbd "C-q") 'exchange-point-and-mark)
+(global-set-key (kbd "M-n") 'next-error)
 
 (use-package dired-x
   :ensure nil)
