@@ -54,7 +54,7 @@
 (global-set-key (kbd "M-<down>") (lambda () (interactive) (scroll-up 10)))
 (global-set-key (kbd "M-<up>") (lambda () (interactive) (scroll-down 10)))
 (global-set-key (kbd "M-p") 'other-window)
-(global-set-key (kbd "M-b") 'buffer-menu)
+(global-set-key (kbd "M-b") 'switch-to-buffer)
 (global-set-key (kbd "M-o") 'ff-find-other-file)
 (global-set-key (kbd "M-f") 'ido-find-file)
 (global-set-key (kbd "M-k") 'kill-buffer)
@@ -69,7 +69,8 @@
 (global-set-key (kbd "C-q") 'exchange-point-and-mark)
 (global-set-key (kbd "M-n") 'next-error)
 (global-set-key (kbd "C-n") 'previous-error)
-;;(define-key c-mode-map (kbd "C-d") 'delete-region)
+(global-set-key (kbd "C-d") 'delete-region)
+(define-key c-mode-base-map (kbd "C-d") 'delete-region)
 
 (use-package dired-x
   :ensure nil)
