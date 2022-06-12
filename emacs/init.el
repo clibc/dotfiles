@@ -45,6 +45,7 @@
   (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 (require 'multiple-cursors)
+(require 'cc-mode)
 
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
