@@ -3,18 +3,17 @@
 (ido-mode 1)
 (setq ring-bell-function 'ignore)
 (toggle-scroll-bar -1)
-(setq default-frame-alist '((font . "JetBrains Mono 12")))
+
+(setq default-frame-alist '((font . "Liberation Mono 13")))
 (global-hl-line-mode +1)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (global-hi-lock-mode 1)
 (setq visible-bell 1)
 (show-paren-mode 1)
 
-(global-display-line-numbers-mode)
-(global-auto-revert-mode 1)
-(transient-mark-mode 0)
-
+;;(global-display-line-numbers-mode)
 (setq-default cursor-type 'box) 
+(transient-mark-mode 0)
 
 (add-hook 'dired-mode-hook (lambda () (text-scale-increase 2)))
 (add-to-list 'auto-mode-alist '("\\.cs\\'" . c-mode))
@@ -22,6 +21,7 @@
 (setq ido-ignore-files '("\\.meta\\'"))
 
 (setq-default indent-tabs-mode nil)
+(setq compile-command ".\\build.bat")
 
 (setq auto-save-default nil)
 (setq make-backup-files nil)
@@ -79,22 +79,24 @@
 
 (global-auto-complete-mode t)
 
-(setq TextColor '"gainsboro")
-(set-background-color "#272B33")
+(setq TextColor '"tan")
+(setq BGColor '"grey12")
+(setq StringColor '"LightBlue")
+
+(set-background-color BGColor)
 (set-face-background 'mode-line  "tan2")
 (set-cursor-color "#00ff00")
 (set-foreground-color TextColor)
 (set-face-background 'hl-line "DarkSlateBlue")
 (set-face-attribute 'region nil :background "SlateGray" :foreground "black")
-(set-face-background 'font-lock-keyword-face  "#272B33")
-(set-face-foreground 'font-lock-keyword-face  TextColor)
-(set-face-foreground 'font-lock-string-face  "SeaGreen")
+(set-face-background 'font-lock-keyword-face  BGColor)
+(set-face-foreground 'font-lock-keyword-face "LightBlue")
+(set-face-foreground 'font-lock-string-face  StringColor)
 (set-face-foreground 'font-lock-type-face  TextColor)
 (set-face-foreground 'font-lock-variable-name-face  TextColor)
 (set-face-foreground 'font-lock-preprocessor-face  TextColor)
 (set-face-foreground 'font-lock-function-name-face  TextColor)
 (set-face-foreground 'line-number  TextColor)
-(set-face-foreground 'font-lock-comment-face  "SeaGreen")
+(set-face-foreground 'font-lock-comment-face  "Green")
 (set-face-foreground 'vertical-border TextColor)
 (set-face-background 'fringe  nil)
-
