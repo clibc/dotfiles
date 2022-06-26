@@ -27,10 +27,6 @@
 (setq make-backup-files nil)
 (setq ac-auto-show-menu nil)
 
-(setq auto-save-default nil)
-(setq make-backup-files nil)
-(setq ac-auto-show-menu nil)
-
 (setq c-default-style "bsd")
 (setq-default tab-width 4)
 (setq c-basic-offset 4)
