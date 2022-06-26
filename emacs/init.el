@@ -11,13 +11,9 @@
 (setq visible-bell 1)
 (show-paren-mode 1)
 
-;;(global-display-line-numbers-mode)
 (setq-default cursor-type 'box) 
 (transient-mark-mode 0)
 
-(add-hook 'dired-mode-hook (lambda () (text-scale-increase 2)))
-(add-to-list 'auto-mode-alist '("\\.cs\\'" . c-mode))
-(add-to-list 'auto-mode-alist '("\\.shader\\'" . c-mode))
 (setq ido-ignore-files '("\\.meta\\'"))
 
 (setq-default indent-tabs-mode nil)
@@ -25,7 +21,6 @@
 
 (setq auto-save-default nil)
 (setq make-backup-files nil)
-(setq ac-auto-show-menu nil)
 
 (setq c-default-style "bsd")
 (setq-default tab-width 4)
@@ -68,12 +63,11 @@
 (global-set-key (kbd "C-n") 'previous-error)
 (global-set-key (kbd "C-d") 'delete-region)
 (define-key c-mode-base-map (kbd "C-d") 'delete-region)
+(global-set-key (kbd "C-<tab>") 'dabbrev-expand)
 
 (use-package dired-x
   :ensure nil)
 (global-set-key (kbd "M-d") 'dired-jump)
-
-(global-auto-complete-mode t)
 
 (setq TextColor '"tan")
 (setq BGColor '"grey12")
