@@ -63,7 +63,7 @@
 (global-set-key (kbd "C-n") 'previous-error)
 (global-set-key (kbd "C-d") 'delete-region)
 (define-key c-mode-base-map (kbd "C-d") 'delete-region)
-(global-set-key (kbd "C-<tab>") 'dabbrev-expand)
+(global-set-key (kbd "S-<tab>") 'dabbrev-expand)
 
 (use-package dired-x
   :ensure nil)
