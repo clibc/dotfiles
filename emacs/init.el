@@ -52,7 +52,6 @@
 (global-set-key (kbd "M-k") 'kill-buffer)
 (global-set-key [mouse-2] nil)
 (global-set-key (kbd "C-c m c") 'mc/edit-lines)
-(global-set-key (kbd "M-m") 'compile)
 (global-set-key (kbd "M-c") 'comment-region)
 (global-set-key (kbd "C-M-<down>") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-M-<up>") 'mc/mark-previous-like-this)
@@ -65,6 +64,21 @@
 (define-key c-mode-base-map (kbd "C-d") 'delete-region)
 (global-set-key (kbd "S-<tab>") 'dabbrev-expand)
 (global-set-key (kbd "C-<tab>") 'indent-region)
+
+(defun find-project-directory-recursive ()
+  "Recursively search for a makefile."
+  (interactive)
+  (if (file-exists-p "build.bat") t
+    (cd "../")
+    (find-project-directory-recursive)))
+
+(defun shigi-compile ()
+  (interactive)
+  (find-project-directory-recursive)
+  (compile ".\\build.bat")
+  )
+
+(global-set-key (kbd "M-m") 'shigi-compile)
 
 (use-package dired-x
   :ensure nil)
