@@ -21,4 +21,6 @@ doskey alias=doskey /MACROS:ALL
 doskey emacs=start /B runemacs.exe $*
 doskey nmake=nmake /F NMakefile $*
 REM doskey nano="C:\Program Files\Git\usr\bin\nano.exe" $*
+REM Requires youtube-dl.exe and ffmpeg.exe
+doskey youtubemp3=youtube-dl.exe -x --audio-format "mp3" $*
 cls
