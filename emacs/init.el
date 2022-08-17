@@ -4,7 +4,7 @@
 (setq ring-bell-function 'ignore)
 (toggle-scroll-bar -1)
 
-(setq default-frame-alist '((font . "Liberation Mono 13")))
+(setq default-frame-alist '((font . "Liberation Mono 11")))
 (global-hl-line-mode +1)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (global-hi-lock-mode 1)
@@ -13,6 +13,7 @@
 
 (setq-default cursor-type 'box) 
 (transient-mark-mode 0)
+(set-default 'truncate-lines nil)
 
 (setq ido-ignore-files '("\\.meta\\'"))
 
@@ -25,6 +26,7 @@
 (setq c-default-style "bsd")
 (setq-default tab-width 4)
 (setq c-basic-offset 4)
+(setq dabbrev-case-replace nil)
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -37,6 +39,8 @@
 
 (require 'multiple-cursors)
 (require 'cc-mode)
+(require 'visible-mark)
+(global-visible-mark-mode 1)
 
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
@@ -52,7 +56,8 @@
 (global-set-key (kbd "M-k") 'kill-buffer)
 (global-set-key [mouse-2] nil)
 (global-set-key (kbd "C-c m c") 'mc/edit-lines)
-(global-set-key (kbd "M-c") 'comment-region)
+(global-set-key (kbd "M-;") 'comment-region)
+(global-set-key (kbd "M-'") 'uncomment-region)
 (global-set-key (kbd "C-M-<down>") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-M-<up>") 'mc/mark-previous-like-this)
 (global-set-key (kbd "M-s") 'mark-sexp)
@@ -64,6 +69,8 @@
 (define-key c-mode-base-map (kbd "C-d") 'delete-region)
 (global-set-key (kbd "S-<tab>") 'dabbrev-expand)
 (global-set-key (kbd "C-<tab>") 'indent-region)
+(require 'swiper)
+(global-set-key (kbd "C-s") 'swiper-all)
 
 (defun find-project-directory-recursive ()
   "Recursively search for a makefile."
@@ -84,9 +91,14 @@
   :ensure nil)
 (global-set-key (kbd "M-d") 'dired-jump)
 
-(setq TextColor '"tan")
-(setq BGColor '"grey12")
-(setq StringColor '"LightBlue")
+;; old theme
+;; (setq TextColor '"goldenrod")
+;; (setq BGColor '"gray8")
+;; (setq StringColor '"sienna1")
+
+(setq TextColor '"#C4B5A5")
+(setq BGColor '"#1E1E27")
+(setq StringColor '"#E983CC")
 
 (set-background-color BGColor)
 (set-face-background 'mode-line  "tan2")
@@ -95,13 +107,13 @@
 (set-face-background 'hl-line "DarkSlateBlue")
 (set-face-attribute 'region nil :background "SlateGray" :foreground "black")
 (set-face-background 'font-lock-keyword-face  BGColor)
-(set-face-foreground 'font-lock-keyword-face "LightBlue")
+(set-face-foreground 'font-lock-keyword-face StringColor)
 (set-face-foreground 'font-lock-string-face  StringColor)
 (set-face-foreground 'font-lock-type-face  TextColor)
 (set-face-foreground 'font-lock-variable-name-face  TextColor)
 (set-face-foreground 'font-lock-preprocessor-face  TextColor)
 (set-face-foreground 'font-lock-function-name-face  TextColor)
 (set-face-foreground 'line-number  TextColor)
-(set-face-foreground 'font-lock-comment-face  "Green")
+(set-face-foreground 'font-lock-comment-face  "#C78707")
 (set-face-foreground 'vertical-border TextColor)
 (set-face-background 'fringe  nil)
