@@ -115,6 +115,6 @@
 (set-face-foreground 'font-lock-preprocessor-face  TextColor)
 (set-face-foreground 'font-lock-function-name-face  TextColor)
 (set-face-foreground 'line-number  TextColor)
-(set-face-foreground 'font-lock-comment-face  "#C78707")
+(set-face-foreground 'font-lock-comment-face  "#7D7D7D")
 (set-face-foreground 'vertical-border TextColor)
 (set-face-background 'fringe  nil)
