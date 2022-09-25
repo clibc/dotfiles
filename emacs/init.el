@@ -39,8 +39,6 @@
 
 (require 'multiple-cursors)
 (require 'cc-mode)
-(require 'visible-mark)
-(global-visible-mark-mode 1)
 
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
@@ -85,20 +83,23 @@
   (compile ".\\build.bat")
   )
 
-(global-set-key (kbd "M-m") 'shigi-compile)
+(defun shigi-find ()
+  (interactive)
+  (compile (message "findref.bat %s" (read-string "Search for: ")))
+)
 
+(global-set-key (kbd "M-m") 'shigi-compile)
+(global-set-key (kbd "M-/") 'shigi-find)
 (use-package dired-x
   :ensure nil)
 (global-set-key (kbd "M-d") 'dired-jump)
 
-;; old theme
-;; (setq TextColor '"goldenrod")
-;; (setq BGColor '"gray8")
-;; (setq StringColor '"sienna1")
 
-(setq TextColor '"#C4B5A5")
-(setq BGColor '"#1E1E27")
-(setq StringColor '"#E983CC")
+;; Themes thing
+(setq TextColor '"#D0AE85")
+(setq BGColor '"gray12")
+(setq StringColor '"#6B8E23")
+(setq KeywordColor '"#DCA51C")
 
 (set-background-color BGColor)
 (set-face-background 'mode-line  "tan2")
@@ -107,9 +108,9 @@
 (set-face-background 'hl-line "DarkSlateBlue")
 (set-face-attribute 'region nil :background "SlateGray" :foreground "black")
 (set-face-background 'font-lock-keyword-face  BGColor)
-(set-face-foreground 'font-lock-keyword-face StringColor)
+(set-face-foreground 'font-lock-keyword-face KeywordColor)
 (set-face-foreground 'font-lock-string-face  StringColor)
-(set-face-foreground 'font-lock-type-face  TextColor)
+(set-face-foreground 'font-lock-type-face  KeywordColor)
 (set-face-foreground 'font-lock-variable-name-face  TextColor)
 (set-face-foreground 'font-lock-preprocessor-face  TextColor)
 (set-face-foreground 'font-lock-function-name-face  TextColor)
