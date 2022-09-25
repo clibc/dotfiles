@@ -97,7 +97,7 @@
 
 ;; Themes thing
 (setq TextColor '"#D0AE85")
-(setq BGColor '"gray12")
+(setq BGColor '"gray7")
 (setq StringColor '"#6B8E23")
 (setq KeywordColor '"#DCA51C")
 
