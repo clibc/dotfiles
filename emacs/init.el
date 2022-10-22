@@ -4,7 +4,11 @@
 (setq ring-bell-function 'ignore)
 (toggle-scroll-bar -1)
 
-(setq default-frame-alist '((font . "Liberation Mono 11")))
+;;(setq w32-enable-synthesized-fonts t)
+
+(set-face-attribute 'default nil :font "Liberation Mono" :weight 'light :height 120)
+;;(set-face-attribute 'font-lock-comment-face :font "Liberation Mono" :weight 'light :height 150)
+;;(setq default-frame-alist '((font . "Liberation Mono 12")))
 (global-hl-line-mode +1)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (global-hi-lock-mode 1)
@@ -94,12 +98,11 @@
   :ensure nil)
 (global-set-key (kbd "M-d") 'dired-jump)
 
-
 ;; Themes thing
-(setq TextColor '"#D0AE85")
-(setq BGColor '"gray7")
-(setq StringColor '"#6B8E23")
-(setq KeywordColor '"#DCA51C")
+(setq TextColor '"#B0B76B")
+(setq BGColor '"#1E1E1E")
+(setq StringColor '"#D69D85")
+(setq KeywordColor '"#569CD6")
 
 (set-background-color BGColor)
 (set-face-background 'mode-line  "tan2")
@@ -108,13 +111,34 @@
 (set-face-background 'hl-line "DarkSlateBlue")
 (set-face-attribute 'region nil :background "SlateGray" :foreground "black")
 (set-face-background 'font-lock-keyword-face  BGColor)
-(set-face-foreground 'font-lock-keyword-face KeywordColor)
+(set-face-background 'font-lock-keyword-face  BGColor)
+;;(set-face-foreground 'font-lock-keyword-face KeywordColor)
+(set-face-foreground 'font-lock-keyword-face "#D8A0DF")
 (set-face-foreground 'font-lock-string-face  StringColor)
-(set-face-foreground 'font-lock-type-face  KeywordColor)
+(set-face-foreground 'font-lock-type-face  "#FFD700")
 (set-face-foreground 'font-lock-variable-name-face  TextColor)
-(set-face-foreground 'font-lock-preprocessor-face  TextColor)
-(set-face-foreground 'font-lock-function-name-face  TextColor)
+(set-face-foreground 'font-lock-preprocessor-face  "#9B9B9B")
+(set-face-foreground 'font-lock-function-name-face  "#FF8000")
+(set-face-foreground 'font-lock-constant-face  "#BD63C5")
 (set-face-foreground 'line-number  TextColor)
-(set-face-foreground 'font-lock-comment-face  "#7D7D7D")
 (set-face-foreground 'vertical-border TextColor)
 (set-face-background 'fringe  nil)
+(set-face-foreground 'font-lock-comment-face  "#57A64A")
+;;(set-face-foreground 'font-lock-reference-face "#BD63C5")
+(set-face-attribute 'font-lock-comment-face nil :slant 'italic)
+(set-face-attribute 'font-lock-type-face nil :slant 'italic)
+(set-face-attribute 'font-lock-keyword-face nil :slant 'italic)
+
+(defvar function-call-keywords
+  '(("\\<\\([a-zA-Z0-9]*\\) *("1 font-lock-function-name-face)))
+
+(defvar override-keywords
+  '(("\\<\\(if\\|for\\|while\\|switch\\)\\>" 1 'font-lock-keyword-face)))
+
+(font-lock-add-keywords 'c++-mode function-call-keywords)
+(font-lock-add-keywords 'c-mode function-call-keywords)
+(font-lock-add-keywords 'csharp-mode function-call-keywords)
+
+(font-lock-add-keywords 'c++-mode override-keywords)
+(font-lock-add-keywords 'c-mode override-keywords)
+(font-lock-add-keywords 'csharp-mode override-keywords)
