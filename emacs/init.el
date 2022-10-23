@@ -98,12 +98,11 @@
   :ensure nil)
 (global-set-key (kbd "M-d") 'dired-jump)
 
-;; Themes thing
+;; Theme start
 (setq TextColor '"#B0B76B")
 (setq BGColor '"#1E1E1E")
 (setq StringColor '"#D69D85")
 (setq KeywordColor '"#569CD6")
-
 (set-background-color BGColor)
 (set-face-background 'mode-line  "tan2")
 (set-cursor-color "#00ff00")
@@ -112,7 +111,6 @@
 (set-face-attribute 'region nil :background "SlateGray" :foreground "black")
 (set-face-background 'font-lock-keyword-face  BGColor)
 (set-face-background 'font-lock-keyword-face  BGColor)
-;;(set-face-foreground 'font-lock-keyword-face KeywordColor)
 (set-face-foreground 'font-lock-keyword-face "#D8A0DF")
 (set-face-foreground 'font-lock-string-face  StringColor)
 (set-face-foreground 'font-lock-type-face  "#FFD700")
@@ -124,17 +122,13 @@
 (set-face-foreground 'vertical-border TextColor)
 (set-face-background 'fringe  nil)
 (set-face-foreground 'font-lock-comment-face  "#57A64A")
-;;(set-face-foreground 'font-lock-reference-face "#BD63C5")
 (set-face-attribute 'font-lock-comment-face nil :slant 'italic)
 (set-face-attribute 'font-lock-type-face nil :slant 'italic)
 (set-face-attribute 'font-lock-keyword-face nil :slant 'italic)
-
 (defvar function-call-keywords
   '(("\\<\\([a-zA-Z0-9]*\\) *("1 font-lock-function-name-face)))
-
 (defvar override-keywords
   '(("\\<\\(if\\|for\\|while\\|switch\\|return\\)\\>" 1 'font-lock-keyword-face)))
-
 (font-lock-add-keywords 'c++-mode function-call-keywords)
 (font-lock-add-keywords 'c-mode function-call-keywords)
 (font-lock-add-keywords 'csharp-mode function-call-keywords)
@@ -142,3 +136,4 @@
 (font-lock-add-keywords 'c++-mode override-keywords)
 (font-lock-add-keywords 'c-mode override-keywords)
 (font-lock-add-keywords 'csharp-mode override-keywords)
+;;Theme end
