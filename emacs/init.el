@@ -133,7 +133,7 @@
   '(("\\<\\([a-zA-Z0-9]*\\) *("1 font-lock-function-name-face)))
 
 (defvar override-keywords
-  '(("\\<\\(if\\|for\\|while\\|switch\\)\\>" 1 'font-lock-keyword-face)))
+  '(("\\<\\(if\\|for\\|while\\|switch\\|return\\)\\>" 1 'font-lock-keyword-face)))
 
 (font-lock-add-keywords 'c++-mode function-call-keywords)
 (font-lock-add-keywords 'c-mode function-call-keywords)
