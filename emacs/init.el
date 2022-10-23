@@ -132,7 +132,6 @@
 (font-lock-add-keywords 'c++-mode function-call-keywords)
 (font-lock-add-keywords 'c-mode function-call-keywords)
 (font-lock-add-keywords 'csharp-mode function-call-keywords)
-
 (font-lock-add-keywords 'c++-mode override-keywords)
 (font-lock-add-keywords 'c-mode override-keywords)
 (font-lock-add-keywords 'csharp-mode override-keywords)
