@@ -6,9 +6,7 @@
 
 ;;(setq w32-enable-synthesized-fonts t)
 
-(set-face-attribute 'default nil :font "Liberation Mono" :weight 'light :height 120)
-;;(set-face-attribute 'font-lock-comment-face :font "Liberation Mono" :weight 'light :height 150)
-;;(setq default-frame-alist '((font . "Liberation Mono 12")))
+(set-face-attribute 'default nil :font "Liberation Mono" :weight 'light :height 130)
 (global-hl-line-mode +1)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (global-hi-lock-mode 1)
@@ -107,7 +105,7 @@
 (set-face-background 'mode-line  "tan2")
 (set-cursor-color "#00ff00")
 (set-foreground-color TextColor)
-(set-face-background 'hl-line "DarkSlateBlue")
+(set-face-background 'hl-line "gray27")
 (set-face-attribute 'region nil :background "SlateGray" :foreground "black")
 (set-face-background 'font-lock-keyword-face  BGColor)
 (set-face-background 'font-lock-keyword-face  BGColor)
