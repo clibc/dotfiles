@@ -96,6 +96,17 @@
   :ensure nil)
 (global-set-key (kbd "M-d") 'dired-jump)
 
+(defun duplicate-line()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (open-line 1)
+  (next-line 1)
+  (yank)
+  )
+(global-set-key (kbd "C-S-d") 'duplicate-line)
+
 ;; Theme start
 (setq TextColor '"#B0B76B")
 (setq BGColor '"#1E1E1E")
