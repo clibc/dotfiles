@@ -105,7 +105,7 @@
   (next-line 1)
   (yank)
   )
-(global-set-key (kbd "C-S-d") 'duplicate-line)
+(global-set-key (kbd "M-d") 'duplicate-line)
 
 ;; Theme start
 (setq TextColor '"#B0B76B")
