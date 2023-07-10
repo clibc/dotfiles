@@ -4,9 +4,8 @@
 (setq ring-bell-function 'ignore)
 (toggle-scroll-bar -1)
 
-;;(setq w32-enable-synthesized-fonts t)
-
-(set-face-attribute 'default nil :font "Liberation Mono" :weight 'light :height 130)
+(global-auto-revert-mode)
+(set-face-attribute 'default nil :font "Fira Code Medium" :weight 'light :height 130)
 (global-hl-line-mode +1)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (global-hi-lock-mode 1)
@@ -29,6 +28,8 @@
 (setq-default tab-width 4)
 (setq c-basic-offset 4)
 (setq dabbrev-case-replace nil)
+
+(load "C:/Users/clibc/AppData/Roaming/.emacs.d/jai-mode.el")
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -69,8 +70,8 @@
 (define-key c-mode-base-map (kbd "C-d") 'delete-region)
 (global-set-key (kbd "S-<tab>") 'dabbrev-expand)
 (global-set-key (kbd "C-<tab>") 'indent-region)
-(require 'swiper)
-(global-set-key (kbd "C-s") 'swiper-all)
+;;(require 'swiper)
+;;(global-set-key (kbd "C-s") 'swiper-all)
 
 (defun find-project-directory-recursive ()
   "Recursively search for a makefile."
@@ -109,14 +110,14 @@
 
 ;; Theme start
 (setq TextColor '"#B0B76B")
-(setq BGColor '"#1E1E1E")
+(setq BGColor '"#000000")
 (setq StringColor '"#D69D85")
 (setq KeywordColor '"#569CD6")
 (set-background-color BGColor)
 (set-face-background 'mode-line  "tan2")
 (set-cursor-color "#00ff00")
 (set-foreground-color TextColor)
-(set-face-background 'hl-line "gray27")
+(set-face-background 'hl-line "#192054")
 (set-face-attribute 'region nil :background "SlateGray" :foreground "black")
 (set-face-background 'font-lock-keyword-face  BGColor)
 (set-face-background 'font-lock-keyword-face  BGColor)
@@ -145,3 +146,47 @@
 (font-lock-add-keywords 'c-mode override-keywords)
 (font-lock-add-keywords 'csharp-mode override-keywords)
 ;;Theme end
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(use-package swiper spacegray-theme smex popup multiple-cursors magit gruber-darker-theme flycheck flatland-theme f elfeed doom-themes csharp-mode color-theme-sanityinc-tomorrow clang-format autopair)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+(add-hook 'compilation-mode-hook
+          '(lambda()
+             ;;(setq compilation-auto-jump-to-first-error t)
+             (setq compilation-scroll-output t)
+             (define-key compilation-mode-map (kbd "n") 'compilation-next-error)
+             (define-key compilation-mode-map (kbd "p") 'compilation-previous-error)))
+
+;; MSBuild output settings
+;; VS 2019
+;; C:\...\my.cpp(26,21): error C2544: ... [c:\...\.vcxproj]
+(add-to-list
+ 'compilation-error-regexp-alist
+  (list (concat
+        "^"
+        "\\([^(]+\\)"                                ; 1
+        "(\\([0-9]+\\)\\(?:,\\([0-9]+\\)\\)?) ?: "   ; 2,(3)
+        "\\(\\(?:error\\|\\(warning\\)\\) [^ :]+\\)" ; 4,(5)
+        )
+       1                          ;FILE
+       2                          ;LINE
+       3                          ;COLUMN
+       '(5)                       ;ERROR is warning if 5 matched, else error.
+       nil                        ;HYPERLINK
+       '(4 font-lock-comment-face)
+       ) )
+
+
+;; Always put compilation window on side. Split vertically
+(setq split-height-threshold 120000
+      split-width-threshold 1)
