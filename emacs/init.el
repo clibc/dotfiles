@@ -1,3 +1,8 @@
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(ido-mode 1)
+(setq ring-bell-function 'ignore)
+(toggle-scroll-bar -1)
 
 (global-auto-revert-mode)
 (set-face-attribute 'default nil :font "Liberation Mono" :weight 'light :height 130)
